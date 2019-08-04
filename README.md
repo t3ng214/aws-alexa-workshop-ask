@@ -26,7 +26,8 @@ Alexa提供了多种模块供选择，这里我们选择custom自定义。可以
 
 ### 2. Intents, Samples, and Slots
 
-Intents为意图，即这个skill能提供什么功能。在我此次的demo当中，我们主要提供三个功能，greeting（简述天气情况），列举账号和查询余额。其中greeting不需要认证，列举账号和查询余额为私人功能，只有在用户验证身份后才可以执行。认证作为一个单独的功能，因此我们总共需要构建4个intent。所有的intent我们都通过lambda function来定义具体实现。每个构建response都包含标准speech返回以及card_response(带屏设备可以展示的文字以及title)。   
+Intents为意图，即这个skill能提供什么功能。在我此次的demo当中，我们主要提供三个功能，greeting（简述天气情况），列举账号和查询余额。其中greeting不需要认证，列举账号和查询余额为私人功能，只有在用户验证身份后才可以执行。认证作为一个单独的功能，因此我们总共需要构建4个intent。所有的intent我们都通过lambda function来定义具体实现（
+注：完整的lambda代码请在lambda文件夹中下载）。每个构建response都包含标准speech返回以及card_response(带屏设备可以展示的文字以及title)。   
 
 #### （1）Greeting: SayHelloIntent
 
@@ -202,7 +203,7 @@ test时，request body输入数据即可。如
 }
 ```
 
-注：完整的lambda函数可在sample code当中下载。
+注：完整的lambda函数请在lambda folder中下载。
 
 ### 3. building model
 点击building model
