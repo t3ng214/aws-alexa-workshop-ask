@@ -150,14 +150,14 @@ Our bot is almost ready … all it needs now is a smart backend.
  
 ###	2 Use Lex Import Function to Create a Lex Bot without Manually 
 Creating Intents
-If you do this, you can skip Section 3 Create the Lex Bot Manually.
+If you do this, you can skip Section 1 Create the Lex Bot Manually.
 1.	Click on Action.
 ![](img/workshop/lex-action.png) 
 
 2.	Click on Import. 
  ![](img/workshop/import.png) 
 
-3.	Choose the zip file. You need to download the file lex-import-personal-banker.json.zip from here https://workshop-public-folder.s3.amazonaws.com/index.html 
+3.	Choose the zip file. You need to download the file [lex-import-personal-banker.json.zip](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop/lex-import-personal-banker.json.zip) 
 4.	Click Import. 
 5.	Click Overwrite and Continue if you are not using these slot type.
 ![](img/workshop/import-bot.png) 
@@ -247,7 +247,7 @@ In this lab, you will create a web interface that can be integrated with your Le
 
 6.	Click on Next.
 7.	Click on Next again.
-8.	Tick “I acknowledge that AWS CloudFormation might create IAM resources with custom names.” And click on Create.
+8.	Tick “I acknowledge that AWS CloudFormation might create IAM resources with custom names.” and "I acknowledge that AWS CloudFormation might require the following capability." And click on Create.
 9.	It may take a few minutes. Click on the refresh button on the top right corner to see the progress. 
 ![](img/workshop/cloudformation-output.png)
 
@@ -346,13 +346,16 @@ In this section, we will use cognito user pool for Alexa’s account linking fun
 4.	Confiture cognito app client. Add the addresses in step 3 to Callback URLs ,separated by commas ‘,’. Don’t forget to save it !
 ![](img/workshop/app-client-configuration.png)
 
-5.	Custom your own domain. You have to have an unique domain in your region. Type a name and check the availability for this domain, if it already exists, choose another one.
+5.	Custom your own domain. You have to have an unique domain in your region. Type a name and check the availability for this domain, if it already exists, choose another one. We will use the domain name later.
 ![](img/workshop/custom-domain.png) 
 
 6.	Open account linking in alexa developer console. The second option, whether it allow users to enable skill without linking depends on you. If your skill includes no personal information, for example, your users just ask for some restaurants locations, you could enable it. But if it concerns banking or more personal and sensentive operations, you better disable it.
 ![](img/workshop/account-linking.png) 
 
-7.	Enable account linking function in Alexa console and configure the below infos. All of the information could be found in cognito user pool – app integration -app client page. 
+7.	Enable account linking function in Alexa console and configure the below infos. 
+*	Authorization URI: <your-custom-domain-name>/oauth2/authorize
+*	Access Toekn URI: <your-custom-domain-name>/oauth2/token
+The rest of the information could be found in cognito user pool – app integration -app client page. 
 ![](img/workshop/cognito-configuration.png)
  
 ![](img/workshop/app-client-details.png)
