@@ -356,7 +356,8 @@ In this section, we will use cognito user pool for Alexa’s account linking fun
 
 7.	Enable account linking function in Alexa console and configure the below infos. 
 *	Authorization URI: < your-custom-domain-name >/oauth2/authorize
-*	Access Toekn URI: < your-custom-domain-name >/oauth2/token
+*	Access Toekn URI: < your-custom-domain-name >/oauth2/token    
+
 The rest of the information could be found in cognito user pool – app integration -app client page. 
 ![](img/workshop/cognito-configuration.png)
  
