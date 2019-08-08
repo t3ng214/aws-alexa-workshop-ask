@@ -248,6 +248,8 @@ In this lab, you will create a web interface that can be integrated with your Le
 6.	Click on Next.
 7.	Click on Next again.
 8.	Tick “I acknowledge that AWS CloudFormation might create IAM resources with custom names.” and "I acknowledge that AWS CloudFormation might require the following capability." And click on Create.
+![](img/workshop/cloudformation-knowledge.png)
+
 9.	It may take a few minutes. Click on the refresh button on the top right corner to see the progress. 
 ![](img/workshop/cloudformation-output.png)
 
@@ -353,8 +355,8 @@ In this section, we will use cognito user pool for Alexa’s account linking fun
 ![](img/workshop/account-linking.png) 
 
 7.	Enable account linking function in Alexa console and configure the below infos. 
-*	Authorization URI: <your-custom-domain-name>/oauth2/authorize
-*	Access Toekn URI: <your-custom-domain-name>/oauth2/token
+*	Authorization URI: < your-custom-domain-name >/oauth2/authorize
+*	Access Toekn URI: < your-custom-domain-name >/oauth2/token
 The rest of the information could be found in cognito user pool – app integration -app client page. 
 ![](img/workshop/cognito-configuration.png)
  
