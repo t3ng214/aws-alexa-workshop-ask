@@ -49,7 +49,6 @@ Follow the conversation,
 ###	Amazon Alexa
 Talk to any Echo device on the table. Say, “open personal banker”.
 
-
 ##	Pre-requisites
 1.	You need to bring a laptop. 
 The laptop you bring must allow you to access AWS console.
@@ -61,7 +60,10 @@ https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-a
 3.	Please create an Amazon Developer account. 
 Go to the https://developer.amazon.com/ create an account for free.
 
-4.  Please download Alexa APP using global Apple Store accounts. You won't be able to find the APP if you are using Chinese Apple account.
+4.  [IMPORTANT] Please download Alexa APP using global Apple Store accounts or Google play. 
+*	For Apple users, you won't be able to find the APP if you are using Chinese Apple store account. Do use global accounts.
+*	For google play users, you will need VPN to download the APP and change country setting to anything but China and stop GPS to enable the APP. If the country setting and GPS location is still China, you will meet timeout error whenever you open the APP. 
+![](img/workshop/andriod-gps.jpeg)
 
 5. 	Relative codes could be found [here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop)
 
