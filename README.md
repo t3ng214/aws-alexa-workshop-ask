@@ -61,7 +61,9 @@ https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-a
 3.	Please create an Amazon Developer account. 
 Go to the https://developer.amazon.com/ create an account for free.
 
-4. 	Relative codes could be found [here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop)
+4.  Please download Alexa APP using global Apple Store accounts. You won't be able to find the APP if you are using Chinese Apple account.
+
+5. 	Relative codes could be found [here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop)
 
 ##	Lab Steps
 
@@ -363,8 +365,8 @@ The rest of the information could be found in cognito user pool – app integrat
  
 ![](img/workshop/app-client-details.png)
 
-8.	Add users.  You could either use cognito front page to register a new user or you could simply configure a new user in the cognito console [users and groups].
-![](img/workshop/cognito-add-user.png) 
+8.	Add users.  You could either use cognito front page to register a new user or you could simply configure a new user in the cognito console [users and groups]. Please note that the mobile phone should start with the natianal code for example +86 for China users.
+![](img/workshop/cognito-add-user2.png) 
 
 9.	Open Alexa APP on your phone (the Alexa APP must be downlowded using global Apple Store accounts or google play. You could not find it in Apple store if you login using Chinese account) and choose skill tab.
 ![](img/workshop/alexa-app-skills.jpeg)
