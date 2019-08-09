@@ -368,22 +368,24 @@ The rest of the information could be found in cognito user pool – app integrat
 8.	Add users.  You could either use cognito front page to register a new user or you could simply configure a new user in the cognito console [users and groups]. Please note that the mobile phone should start with the natianal code for example +86 for China users.
 ![](img/workshop/cognito-add-user2.png) 
 
-9.	Open Alexa APP on your phone (the Alexa APP must be downlowded using global Apple Store accounts or google play. You could not find it in Apple store if you login using Chinese account) and choose skill tab.
+9.	Open Alexa APP on your phone (the Alexa APP must be downlowded using global Apple Store accounts). Sign in using your Alexa developer's account, NOT AMAZON.com ACCOUNT.
+
+10. Choose skill tab.
 ![](img/workshop/alexa-app-skills.jpeg)
 
 
-10. Choose your skill and enable it (if it’s already enabled, you may need to re-enable it in case it doesn't work) . 
+11. Choose your skill and enable it (if it’s already enabled, you may need to re-enable it in case it doesn't work) . 
 
-11. Click SETTINGS.   
+12. Click SETTINGS.   
 ![](img/workshop/alexa-skill-setting.jpeg)
 
-12. choose account linking. Note, in your page, it should show in blue font 'linking'.
+13. choose account linking. Note, in your page, it should show in blue font 'linking'.
 ![](img/workshop/linking-account-button.jpeg)
 
-13.	In the new page, input your username and password.
+14.	In the new page, input your username and password.
 ![](img/workshop/cognito-login-in.png)
 
-14. You will see that after login in, the account has been succefully linked.  You may revise your codes now to change all hard-code account balances to query from DynamoDB first. DynamoDB maintains the mapping relationship of cognito identityID and account balance or other information for you to add. We will skip this part.
+15. You will see that after login in, the account has been succefully linked.  You may revise your codes now to change all hard-code account balances to query from DynamoDB first. DynamoDB maintains the mapping relationship of cognito identityID and account balance or other information for you to add. We will skip this part.
 ![](img/workshop/account-linking-success.png)
 
 ###	Optional Challenge – Add SMS Notification to Lex 
