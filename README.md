@@ -12,6 +12,7 @@
 9.	Import Lex Intents to Alexa Voice Interface 
 10.	Create a Lambda function for Alexa
 11.	Add Account Linking For Alexa
+12. (optional) Add SMS Notification to Lex 
 
 ##	Overview
 
@@ -30,21 +31,6 @@ Alexa is Amazon’s cloud-based voice service available on tens of millions of d
 *	Using Lambda as the back-end logic
 *	Testing of Alexa skill
 *	Alexa linking account 
-
-
-##	What Bot are You Building? 
-
-###	Amazon Lex
-Scan the following QR code and open it on your mobile.
-![](img/workshop/qr-code.png)
-
-Follow the conversation,
-
-1.	Start by typing “What is my checking account balance?” (or press the microphone button and ask your question using your computer mic).
-2.	You should get an answer. 
-3.	Then type “What is my home loan balance?” (or ask using your mic)
-4.	Type ‘more loan info’.
-5.	Type ‘car’.
 
 ###	Amazon Alexa
 Talk to any Echo device on the table. Say, “open personal banker”.
@@ -95,8 +81,10 @@ Click the “Create Intent” button.
 ![](img/workshop/create-intent.png)
 
 12.	We now want to provide samples of what our user would type or say to perform this action (i.e. to activate this intent). Under “Sample utterances”, type the below phrases and hit [enter] or click the blue “+” sign after each phrase. Make sure you do not add a question mark at the end of the phrase as this will cause build issues later on.
+
 •	What is my {AccountType} balance
 •	{AccountType} account balance
+
 NOTE: {AccountType} represents a ‘slot’ which is information that we need to process the users request. Type it exactly as shown above with the braces, and in the next step we will define the ‘AccountType’ slot and list the acceptable values (checking, savings). Once the lab is complete, the user will interact with our bot by saying something like “What is my checking balance”.
 ![](img/workshop/personal-banker.png)
 
