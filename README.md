@@ -7,7 +7,7 @@
 4.	Link Lex bot with the Lex Lambda function
 5.	Chat with Lex Bot
 6.	Publish the Lex Bot
-7.	Bring Lex Bot to Web
+7.	(optional) Bring Lex Bot to Web
 8.	Export the Bot to Alexa Skills Kit / Lex Format
 9.	Import Lex Intents to Alexa Voice Interface 
 10.	Create a Lambda function for Alexa
@@ -15,6 +15,8 @@
 12. (optional) Add SMS Notification to Lex 
 
 ##	Overview
+
+In general, the lab covers two parts. The first part is to about Lex, step 1-7 is to demo the usage of Lex together with other services like lambda function, cognito etc. Step 8-11 is the hands on lab on Alexa. The reason why we introduces these two services together is they are highly relative. **Amazon Lex uses the same deep learning technologies that power Amazon Alexa and we could export Lex settings directly to enable Alexa skills**.
 
 (1)	Amazon Lex
 Amazon Lex is a service for building conversational interfaces into any application using voice and text. Amazon Lex provides the advanced deep learning functionalities of automatic speech recognition (ASR) for converting speech to text, and natural language understanding (NLU) to recognize the intent of the text, to enable you to build applications with highly engaging user experiences and lifelike conversational interactions. With Amazon Lex, the same deep learning technologies that power Amazon Alexa are now available to any developer, enabling you to quickly and easily build sophisticated, natural language, conversational bots (“chatbots”). This lab is designed to demonstrate how to create a new bot including defining intents and slots. This lab will walk you through the following:
@@ -32,6 +34,7 @@ Alexa is Amazon’s cloud-based voice service available on tens of millions of d
 *	Testing of Alexa skill
 *	Alexa linking account 
 
+
 ###	Amazon Alexa
 Talk to any Echo device on the table. Say, “open personal banker”.
 
@@ -46,7 +49,7 @@ https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-a
 3.	Please create an Amazon Developer account. 
 Go to the https://developer.amazon.com/ create an account for free.
 
-4.  [IMPORTANT] Please download Alexa APP using global Apple Store accounts or Google play. 
+4.  **[IMPORTANT]** Please download Alexa APP using global Apple Store accounts or Google play. 
 *	For Apple users, you won't be able to find the APP if you are using Chinese Apple store account. Do use global accounts.
 *	For google play users, you will need VPN to download the APP and change country setting to anything but China and stop GPS to enable the APP. If the country setting and GPS location is still China, you will meet timeout error whenever you open the APP. 
 ![](img/workshop/andriod-gps.jpeg)
@@ -55,11 +58,17 @@ Go to the https://developer.amazon.com/ create an account for free.
 
 ##	Lab Steps
 
-Note: [click here to download the code files](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop).
+Note: 
+
+*	**[IMPORTANT]** Please use us-east-1 (virginia) for this lab, as the cloudformation template that is used in Step 7 is located in us-east-1. Choosing other regions is ok if you skip Step 7.
+
+*	Step 1 and step 2 is the same, the only difference is creating the intents manually or not. Choose your preferred one is ok. But if you are interested, you could experience both steps.
+
+*	[click here to download the code files](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop).
 
 ### 1.Create the Lex Bot Manually
 
-You can choose to create Lex bot manually, or go to Section 4 Use Lex Import Function to Create a Lex Bot without Manually Creating Intents.
+**This section is optional**. You can either choose to create Lex bot manually in this section, or go to Section 2 Use Lex Import Function to Create a Lex Bot without Manually Creating Intents directly. 
 
 1.	Log in to AWS Lex Console https://console.aws.amazon.com/lex 
 2.	If you have never created a bot, click “Get Started”
@@ -72,15 +81,15 @@ You can choose to create Lex bot manually, or go to Section 4 Use Lex Import Fun
 ![](img/workshop/create-lex-bot.png)
 
 8.	Click Create
-9.	We will start by creating an intent, which represents an action that the user wants to perform. For example, we’re going to create three intents in this lab for different actions a user can perform: Get Account Details; Get Loan Details; Get Loan Products.
-Click the “Create Intent” button.
+9.	We will start by creating an intent, which represents an action that the user wants to perform. For example, we’re going to create three intents in this lab for different actions a user can perform: Get Account Details; Get Loan Details; Get Loan Products. **Click the “Create Intent” button**.
+
 10.	In the window that pops-up click the “Create new intent” link.
 ![](img/workshop/add-intent.png)
 
 11.	Our first intent enables the user to get account details, so name this intent “GetAccountDetail” then click “Add”.
 ![](img/workshop/create-intent.png)
 
-12.	We now want to provide samples of what our user would type or say to perform this action (i.e. to activate this intent). Under “Sample utterances”, type the below phrases and hit [enter] or click the blue “+” sign after each phrase. Make sure you do not add a question mark at the end of the phrase as this will cause build issues later on.
+12.	We now want to provide samples of what our user would type or say to perform this action (i.e. to activate this intent). Under “Sample utterances”, **type the below phrases and hit [enter] or click the blue “+” sign after each phrase**. Make sure you do not add a question mark at the end of the phrase as this will cause build issues later on.
 
 *	What is my {AccountType} balance   
 *	{AccountType} account balance
@@ -89,7 +98,8 @@ NOTE: {AccountType} represents a ‘slot’ which is information that we need to
 ![](img/workshop/personal-banker.png)
 
 13.	Next we define a slot which is information we need to process the users request. This information can be included in the utterance (query) that the user types or says, and if not included, Lex will prompt the user for the information. While Lex includes many built-in slot types (such as number, color, city, food, etc), in this case we want to define a custom slot to get the account type that the user is referring to. 
-Click on the blue “+” sign next to “Slot types” on the left hand side of the screen
+**Click on the blue “+” sign next to “Slot types” on the left hand side of the screen**
+
 14.	For ‘Slot type name’ enter “AccountType” and optionally enter a description (although description is not required)
 15.	For Value, we want to allow the user to make queries against either their “checking” or “saving” account so enter those as values, clicking the blue “+” sign after each word.
 
@@ -102,19 +112,20 @@ Click on the blue “+” sign next to “Slot types” on the left hand side of
 ![](img/workshop/get-account-detail.png)
 
 19.	Scroll down and click “Save Intent”
+
 If at any point you made a mistake in the steps above, selecting the “Latest” version of the intent at the top, next to the intent name, will allow you to edit your choices.
-20.	Let’s build this simple Bot: Hit the grey Build button at the top right corner. You will be asked for confirmation to build. Click “Build”. 
-The build process takes approximately a minute. Once complete, you can ask your bot a question as a way to test it. For example, you could type “what is my checking balance?” in the chat window. At this stage since we have not added in the backend Lambda function, the response will be that the bot is ready for fulfillment. 
+
+20.	Let’s build this simple Bot: Hit the grey Build button at the top right corner. You will be asked for confirmation to build. **Click “Build”**.  The build process takes approximately a minute. Once complete, you can ask your bot a question as a way to test it. For example, you could type “what is my checking balance?” in the chat window. At this stage since we have not added in the backend Lambda function, the response will be that the bot is ready for fulfillment.    
 Let’s add 2 more intents and one more slot type. 
-21.	Click the blue “+” sign next to “Intents” on the left hand side of the page, then click “Create new intent”. 
+21.	Click the blue “+” sign next to “Intents” on the left hand side of the page, then **click “Create new intent”**. 
 22.	This intent will allow users to get information on their outstanding home or car loan balance, so set the name to “GetLoanDetail” then click ‘Add’
 23.	For sample utterences (the things we expect out users to type/say to our bot to trigger a specific intent/action), add the following phrase then click the blue “+” at the end of the sample utterance box.
-•	“Get my {LoanType} loan balance”
-24.	Now we’ll create a new slot type which we’ll use to store a response from the user as to whether they are wanting the intent to access their car loan balance or their home loan balance. Click the blue “+” sign next to ‘Slot types’ on the left hand side of the screen
+*	“Get my {LoanType} loan balance”
+24.	Now we’ll create a new slot type which we’ll use to store a response from the user as to whether they are wanting the intent to access their car loan balance or their home loan balance. **Click the blue “+” sign next to ‘Slot types’ on the left hand side of the screen**
 *	For ‘Slot type name’ enter “LoanType” and optionally provide a description
 *	Enter the following two options as values:
-	**	car
-	**	home
+	*	car
+	*	home
 25.	Click ‘Add slot to intent’
 26.	Change the name of the slot from “slotOne” to “LoanType” 
 27.	Provide a prompt (such as “Which loan account?”)
@@ -123,26 +134,26 @@ Let’s add 2 more intents and one more slot type.
 ![](img/workshop/get-loan-product.png)
 
 
-29.	Click ‘Save Intent’
-Now we’ll add a final intent to allow users to get more information on the loan products that we have. 
+29.	**Click ‘Save Intent’**。 Now we’ll add a final intent to allow users to get more information on the loan products that we have. 
 30.	Click the blue “+” sign next to “Intents” on the left hand side of the page, then click “Create new intent”. 
 31.	Set the name of the intent to “GetLoanProducts” then click ‘Add’
 32.	For sample utterences (the things we expect our users to type/say to our bot to trigger a specific intent/action), add the following two phrases. Make sure not to include punctuation (such as comma’s or question marks).
-•	“What is the rate on the {LoanType} loan”
-•	“More loan info”
+*	“What is the rate on the {LoanType} loan”
+*	“More loan info”
 The “More loan info” utterance will be used as a follow-up after a user has asked for information on their outstanding loan balance.
-33.	Add a slot (this allows us to get the loan type that the user wants to query) with the following values
-•	Name: LoanType
-•	Slot Type: LoanType (select from the drop-down list)
-•	Prompt: Which loan type?
+33.	**Add a slot** (this allows us to get the loan type that the user wants to query) with the following values
+*	Name: LoanType
+*	Slot Type: LoanType (select from the drop-down list)
+*	Prompt: Which loan type?
 34.	Click the blue “+” button to the right of the Slots information to add this slot to the intent
 35.	Click ‘Save Intent’
 36.	Click Build, and click Build again when prompted for confirmation. 
 Our bot is almost ready … all it needs now is a smart backend.
  
 ###	2 Use Lex Import Function to Create a Lex Bot without Manually 
-Creating Intents
-If you do this, you can skip Section 1 Create the Lex Bot Manually.
+###	Creating Intents
+You don't need to do this section if you have already finished Step 1. The only difference is manually or automatically.
+
 1.	Click on Action.
 ![](img/workshop/lex-action.png) 
 
@@ -179,6 +190,7 @@ Here we will create a Lambda function that has some Python code to detect the in
 ![](img/workshop/function-code.png)
 
 9.	Download the lambda function code lex-lambda-personal-banker.py. Copy and paste the code into the inline editor (while making sure to overwrite/delete any template code that is already in the code box). Take a few minutes to review the code. Please note if you named your intents differently, you will have to update the dispatch method accordingly.
+
 10.	We are not going to configure any trigger now, so click ‘Save’ on the top right hand corner of the page. You should see a message like this.
 ![](img/workshop/congratulations.png) 
  
@@ -200,10 +212,13 @@ To do this, we go back to the Lex Console https://console.aws.amazon.com/lex
 7.	Click “Build” and then click “Build” again on the confirmation screen.
 
 ###	5 Chat with Lex Bot
+
 1.	Start by typing “What is my checking account balance?” (or press the microphone button and ask your question using your computer mic).
 2.	You should get an answer. 
 3.	Then type “What is my home loan balance?” (or ask using your mic)
-•	Notice that Lex is able to recognize that you are wanting to trigger the GetLoanDetail intent even though what you typed, “What is my home loan balance?”, did not exactly match the sample utterance that you configured the intent with which was “Get my {LoanType} loan balance”. 
+
+*	Notice that Lex is able to recognize that you are wanting to trigger the GetLoanDetail intent even though what you typed, “What is my home loan balance?”, did not exactly match the sample utterance that you configured the intent with which was “Get my {LoanType} loan balance”. 
+
 4.	Type ‘more loan info’ and see how Lex returns information on the current, new home loan rate. In this case, because we didn’t set the ‘slot’ to be required, we didn’t need to specify whether we were looking for more information on car or home loans … Lex returned information on the loan type (in this case, home) that we had just asked about.
  
 
@@ -220,10 +235,10 @@ To do this, we go back to the Lex Console https://console.aws.amazon.com/lex
 ![](img/workshop/UAT.png) 
 
 ###	7 Bring Lex Bot to Web
-In this lab, you will create a web interface that can be integrated with your Lex bot. This interface allows you to interact with a Lex bot directly from a browser using text or voice. You will be using AWS CloudFormation to create this web interface.
+In this lab, you will create a web interface that can be integrated with your Lex bot. This interface allows you to interact with a Lex bot directly from a browser using text or voice. You will be using AWS CloudFormation to create this web interface. **Please use us-east-1** as the cloudformation is in us-east-1.
 
 1.	Go to https://github.com/awslabs/aws-lex-web-ui 
-2.	Go to Getting Started section, find Launch Stack. Click on it.
+2.	Go to Getting Started section, find Launch Stack. Click on it. 
 ![](img/workshop/cloudformation-get-start.png)
  
 3.	You will be brought to CloudFormation service page. If you are asked to login to AWS console, do so.
@@ -231,7 +246,7 @@ In this lab, you will create a web interface that can be integrated with your Le
 
 4.	Click on Next.
 5.	Scroll down. You need to change a few parameters here.
-*	a.	Enter “PersonalBanker” into the BotName. This must be the exact name of your bot. 
+*	a.	Enter “PersonalBanker” into the BotName. **This must be the exact name of your bot**. 
 *	b.	Delete the text in WebAppConfBotInitialText field, and enter “You can ask me for your account info. Just type "What is my checking account balance" or click on the mic and say it.”
 *	c.	Delete the text in WebAppConfBotInitialSpeech field, and enter “Say "What is my checking account balance" to get started.”
 *	d.	Delete the text in WebAppConfToolbarTitle field, and enter “Personal Banker”.
@@ -267,7 +282,8 @@ In this lab, you will create a web interface that can be integrated with your Le
 
 ###	9 Import Lex Intents to Alexa Voice Interface 
 
-1.	Go to the Amazon Developer Portal https://developer.amazon.com . In the top-right corner of the screen, click the "Sign In" button. (If you don't already have an account, you will be able to create a new one for free.) 
+1.	Go to the Amazon Developer Portal https://developer.amazon.com . In the top-right corner of the screen, click the "Sign In" button. (If you don't already have an account, you will be able to create a new one for free. Note it's not the same account for amazon.com) 
+
 2.	Once you have signed in, move your mouse over the Developer Console text at the top of the screen and Select the Skills Link. 
 ![](img/workshop/alexa-page.png)
 
@@ -281,6 +297,7 @@ In this lab, you will create a web interface that can be integrated with your Le
 ![](img/workshop/custom-skill.png) 
 
 6.	You can choose to build the Interaction Model for your skill by adding intents, slots, etc, manully, which we have already done in Lex. So we are going to re-use our Lex intents, slots. 
+
 7.	On the left hand navigation panel, select the JSON Editor tab under Interaction Model. In the textfield provided, replace code line 5 to 23 with the code in the zip file exported from Lex. Follow the instruction below.
 *	a.	Select code line 5 to 23, delete it.
 ![](img/workshop/json-editor.png)
@@ -290,11 +307,12 @@ In this lab, you will create a web interface that can be integrated with your Le
 ![](img/workshop/9-7-c.png) 
 
 *	d.	Paste it back to the Alexa console after line 4.
-*	e.	Input a innovation name as shown below. 
+*	e.	Input a invocation name as shown below. 
 ![](img/workshop/9-7-e.png)
 
 8.	Click on Save Model and then Build Model. 
 9.	Note: You should notice that Intents and Slot Types will auto populate based on the JSON Interaction Model that you have now applied to your skill. 
+
 10.	If your interaction model builds successfully, proceed to the next step. If not, you should see an error. Try to resolve the errors. In our next step of this guide, we will be creating our Lambda function in the AWS developer console, but keep this browser tab open, because we will be returning here.
 
 ###	10 Create a Lambda function for Alexa
@@ -322,7 +340,7 @@ In this lab, you will create a web interface that can be integrated with your Le
 20.	Make sure test is enabled.
 ![](img/workshop/test-alexa.png)
 
-21.	Type Open Personal Banker to start.
+21.	Type **Open Personal Banker** (your invocation name) to start.
 ![](img/workshop/start-alexa.png)
  
 
