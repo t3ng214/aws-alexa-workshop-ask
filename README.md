@@ -35,8 +35,8 @@ Alexa is Amazon’s cloud-based voice service available on tens of millions of d
 *	Alexa linking account 
 
 
-###	Amazon Alexa
-Talk to any Echo device on the table. Say, “open personal banker”.
+###	Amazon Alexa Demo
+After the lab, you will be able to build a smart banking system skill that could be used on Alexa APP or any Echo devices. Talk to any Echo device and Say, “open personal banker” to start the skill. 
 
 ##	Pre-requisites
 1.	You need to bring a laptop. 
