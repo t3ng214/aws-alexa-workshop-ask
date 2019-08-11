@@ -11,7 +11,6 @@ Go to the https://developer.amazon.com/ create an account for free.
 3.  **[IMPORTANT]Please download Alexa APP using global Apple Store accounts or Google play** . 
 *	For Apple users, you won't be able to find the APP if you are using Chinese Apple store account. Do use global accounts.
 *	For google play users, you will need VPN to download the APP and change country setting to anything but China and stop GPS to enable the APP. If the country setting and GPS location is still China, you will meet timeout error whenever you open the APP. 
-![](img/workshop/andriod-gps.jpeg)
 
 ##	Overview
 
