@@ -39,22 +39,19 @@ Alexa is Amazon’s cloud-based voice service available on tens of millions of d
 After the lab, you will be able to build a smart banking system skill that could be used on Alexa APP or any Echo devices. Talk to any Echo device and Say, “open personal banker” to start the skill. 
 
 ##	Pre-requisites
-1.	You need to bring a laptop. 
-The laptop you bring must allow you to access AWS console.
-
-2.	Please open an AWS account. 
+1.	Please open an AWS account. 
 Go to https://aws.amazon.com and follow this quick walkthrough 
 https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/  You need a valid credit card to set up your account. However, it will not be charged and we will provide AWS credit code in the workshop for your AWS service consumption.
 
-3.	Please create an Amazon Developer account. 
+2.	Please create an Amazon Developer account. 
 Go to the https://developer.amazon.com/ create an account for free.
 
-4.  **[IMPORTANT]Please download Alexa APP using global Apple Store accounts or Google play** . 
+3.  **[IMPORTANT]Please download Alexa APP using global Apple Store accounts or Google play** . 
 *	For Apple users, you won't be able to find the APP if you are using Chinese Apple store account. Do use global accounts.
 *	For google play users, you will need VPN to download the APP and change country setting to anything but China and stop GPS to enable the APP. If the country setting and GPS location is still China, you will meet timeout error whenever you open the APP. 
 ![](img/workshop/andriod-gps.jpeg)
 
-5. 	Relative codes could be found [here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop)
+4. 	Relative codes could be found [here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop)
 
 ##	Lab Steps
 
@@ -62,7 +59,7 @@ Note:
 
 *	**[IMPORTANT] Please use us-east-1 (virginia) for this lab**, as the cloudformation template that is used in Step 7 is located in us-east-1. Choosing other regions is ok if you skip Step 7.
 
-*	Step 1 and step 2 is the same, the only difference is creating the intents manually or not. Choose your preferred one is ok. But if you are interested, you could experience both steps.
+*	Step 1 and step 2's function is the same, the only difference is whether to create the intents manually or not. Choose your preferred one is ok. But if you are interested, you could experience both steps and compare the difference.
 
 *	[click here to download the code files](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop).
 
@@ -81,6 +78,7 @@ Note:
 ![](img/workshop/create-lex-bot.png)
 
 8.	Click Create
+
 9.	We will start by creating an intent, which represents an action that the user wants to perform. For example, we’re going to create three intents in this lab for different actions a user can perform: Get Account Details; Get Loan Details; Get Loan Products. **Click the “Create Intent” button**.
 
 10.	In the window that pops-up click the “Create new intent” link.
@@ -133,7 +131,6 @@ Let’s add 2 more intents and one more slot type.
 
 ![](img/workshop/get-loan-product.png)
 
-
 29.	**Click ‘Save Intent’**。 Now we’ll add a final intent to allow users to get more information on the loan products that we have. 
 30.	Click the blue “+” sign next to “Intents” on the left hand side of the page, then click “Create new intent”. 
 31.	Set the name of the intent to “GetLoanProducts” then click ‘Add’
@@ -148,10 +145,10 @@ The “More loan info” utterance will be used as a follow-up after a user has 
 34.	Click the blue “+” button to the right of the Slots information to add this slot to the intent
 35.	Click ‘Save Intent’
 36.	Click Build, and click Build again when prompted for confirmation. 
+
 Our bot is almost ready … all it needs now is a smart backend.
  
 ###	2 Use Lex Import Function to Create a Lex Bot without Manually 
-###	Creating Intents
 You don't need to do this section if you have already finished Step 1. The only difference is manually or automatically.
 
 1.	Click on Action.
@@ -160,14 +157,15 @@ You don't need to do this section if you have already finished Step 1. The only 
 2.	Click on Import. 
  ![](img/workshop/import.png) 
 
-3.	Choose the zip file. You need to download the file [lex-import-personal-banker.json.zip](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop/lex-import-personal-banker.json.zip) 
+3.	Choose the zip file. You need to download the file [lex-import-personal-banker.json.zip](./workshop/lex-import-personal-banker.json.zip) 
 4.	Click Import. 
 5.	Click Overwrite and Continue if you are not using these slot type.
 ![](img/workshop/import-bot.png) 
 
 6.	Click on the bot you just build.
 7.	Click on build.
-8.	The build process takes approximately a minute. Once complete, you can ask your bot a question as a way to test it. For example, you could type “what is my checking balance?” in the chat window. At this stage since we have not added in the backend Lambda function, the response will be that the bot is ready for fulfillment. 
+8.	The build process takes approximately a minute. Once complete, you can ask your bot a question as a way to test it. For example, you could type “what is my checking balance?” in the chat window. At this stage since we have not added in the backend Lambda function, the response will be that the bot is ready for fulfillment.
+
 9.	Then go to Section 3 Create a Lambda function to continue.
 
 
@@ -189,7 +187,7 @@ Here we will create a Lambda function that has some Python code to detect the in
 8.	Scroll down to the integrated Coud9 editor on the Lambda console.
 ![](img/workshop/function-code.png)
 
-9.	Download the lambda function code lex-lambda-personal-banker.py. Copy and paste the code into the inline editor (while making sure to overwrite/delete any template code that is already in the code box). Take a few minutes to review the code. Please note if you named your intents differently, you will have to update the dispatch method accordingly.
+9.	Download the lambda function code [lex-lambda-personal-banker.py](./workshop/lex-lambda-personal-banker.py). Copy and paste the code into the inline editor (while making sure to overwrite/delete any template code that is already in the code box). Take a few minutes to review the code. Please note if you named your intents differently, you will have to update the dispatch method accordingly.
 
 10.	We are not going to configure any trigger now, so click ‘Save’ on the top right hand corner of the page. You should see a message like this.
 ![](img/workshop/congratulations.png) 
@@ -280,6 +278,9 @@ In this lab, you will create a web interface that can be integrated with your Le
 
 5.	Unzip the downloaded file and you will get the .json file. This will be used for Alexa Skill later. You can also export it as Lex format. The exported file can be used to replicate the same bot in another account.
 
+>Note: You could use https://jsonformatter.curiousconcept.com/ to convert the file to standard indented json 
+>if the file's original indents is not perfect
+
 ###	9 Import Lex Intents to Alexa Voice Interface 
 
 1.	Go to the Amazon Developer Portal https://developer.amazon.com . In the top-right corner of the screen, click the "Sign In" button. (If you don't already have an account, you will be able to create a new one for free. Note it's not the same account for amazon.com) 
@@ -296,13 +297,14 @@ In this lab, you will create a web interface that can be integrated with your Le
 5.	Select the Custom model button to add it to your skill, and select the Create Skill button at the top right.
 ![](img/workshop/custom-skill.png) 
 
-6.	You can choose to build the Interaction Model for your skill by adding intents, slots, etc, manully, which we have already done in Lex. So we are going to re-use our Lex intents, slots. 
+6.	You can choose to build the Interaction Model for your skill by adding intents, slots, etc, manully, which we have already done in Lex. So we are going to re-use our Lex intents, slots. **Choose 'Start from scratch'**
 
 7.	On the left hand navigation panel, select the JSON Editor tab under Interaction Model. In the textfield provided, replace code line 5 to 23 with the code in the zip file exported from Lex. Follow the instruction below.
 *	a.	Select code line 5 to 23, delete it.
 ![](img/workshop/json-editor.png)
 
 *	b.	Open the .zip file you export from Lex in Visual Studio or any other text edit file. (If you find it is hard to follow, replace the entire code in the textfield provided with alexa-developer-console-personal-banker.json. Then you can skip step c, d, e, and jump to step 8.)
+
 *	c.	Select the highlighted part below. Copy it. 
 ![](img/workshop/9-7-c.png) 
 
@@ -381,18 +383,18 @@ The rest of the information could be found in cognito user pool – app integrat
 ![](img/workshop/alexa-app-skills.jpeg)
 
 
-11. Choose your skill and enable it (if it’s already enabled, you may need to re-enable it in case it doesn't work) . 
+11. Choose your skill and **enable it to use** (if it’s already enabled, you may need to re-enable it in case it doesn't work) . 
 
 12. Click SETTINGS.   
 ![](img/workshop/alexa-skill-setting.jpeg)
 
-13. choose account linking. Note, in your page, it should show in blue font 'linking'.
+13. choose account linking
 ![](img/workshop/linking-account-button.jpeg)
 
 14.	In the new page, input your username and password.
 ![](img/workshop/cognito-login-in.png)
 
-15. You will see that after login in, the account has been succefully linked.  You may revise your codes now to change all hard-code account balances to query from DynamoDB first. DynamoDB maintains the mapping relationship of cognito identityID and account balance or other information for you to add. We will skip this part.
+15. You will see that after login in, the account has been successfully linked.  You may revise your codes now to change all hard-code account balances to query from DynamoDB first. DynamoDB maintains the mapping relationship of cognito identityID and account balance or other information for you to add. We will skip this part.
 ![](img/workshop/account-linking-success.png)
 
 ###	Optional Challenge – Add SMS Notification to Lex 
