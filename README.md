@@ -39,9 +39,9 @@ Alexa is Amazon’s cloud-based voice service available on tens of millions of d
 After the lab, you will be able to build a smart banking system skill that could be used on Alexa APP or any Echo devices. Talk to any Echo device and Say, “open personal banker” to start the skill. 
 
 ##	Pre-requisites
-1.	Please open an AWS account. 
-Go to https://aws.amazon.com and follow this quick walkthrough 
-https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/  You need a valid credit card to set up your account. However, it will not be charged and we will provide AWS credit code in the workshop for your AWS service consumption.
+
+1.	Please [open an AWS account](https://aws.amazon.com ). You need a valid credit card to set up your account. 
+**Please use us-east-1 (virginia) for this lab**
 
 2.	Please create an Amazon Developer account. 
 Go to the https://developer.amazon.com/ create an account for free.
@@ -49,19 +49,17 @@ Go to the https://developer.amazon.com/ create an account for free.
 3.  **[IMPORTANT]Please download Alexa APP using global Apple Store accounts or Google play** . 
 *	For Apple users, you won't be able to find the APP if you are using Chinese Apple store account. Do use global accounts.
 *	For google play users, you will need VPN to download the APP and change country setting to anything but China and stop GPS to enable the APP. If the country setting and GPS location is still China, you will meet timeout error whenever you open the APP. 
-![](img/workshop/andriod-gps.jpeg)
 
-4. 	Relative codes could be found [here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop)
 
-##	Lab Steps
-
-Note: 
+##	Tips
 
 *	**[IMPORTANT] Please use us-east-1 (virginia) for this lab**, as the cloudformation template that is used in Step 7 is located in us-east-1. Choosing other regions is ok if you skip Step 7.
 
 *	Step 1 and step 2's function is the same, the only difference is whether to create the intents manually or not. Choose your preferred one is ok. But if you are interested, you could experience both steps and compare the difference.
 
-*	[click here to download the code files](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop).
+*	[You could find all the code files related to this lab here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop).
+
+##	Lab Steps
 
 ### 1.Create the Lex Bot Manually
 
