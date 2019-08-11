@@ -30,7 +30,7 @@ Go to the https://developer.amazon.com/ create an account for free.
 
 *	Step 1 and step 2's function is the same, the only difference is whether to create the intents manually or not. Choose your preferred one is ok. But if you are interested, you could experience both steps and compare the difference.
 
-*	[You could find all the code files related to this lab here](https://github.com/lab798/aws-alexa-workshop-ask/tree/master/workshop).
+*	You could find [all the code files related to this lab here](./workshop).
 
 ##	Overview
 
