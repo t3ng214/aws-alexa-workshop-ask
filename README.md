@@ -55,7 +55,6 @@ Alexa is Amazon’s cloud-based voice service available on tens of millions of d
 ###	Amazon Alexa Demo
 After the lab, you will be able to build a smart banking system skill that could be used on Alexa APP or any Echo devices. Talk to any Echo device and Say, “open personal banker” to start the skill. 
 
-
 ##	Conclusion
 In this lab you have learned the basic operations to manage a Lex bot and Alexa skill. Time to create your own bot and Alexa skill. 
 
