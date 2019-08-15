@@ -13,16 +13,15 @@ Go to the https://developer.amazon.com/ create an account for free.
 *	For google play users, you will need VPN to download the APP and change country setting to anything but China and stop GPS to enable the APP. If the country setting and GPS location is still China, you will meet timeout error whenever you open the APP. 
 
 ##	Table of Contents
-1.	[Create the Lex Bot Manually](doc/create-lex-bot-manually.md)
-2.	[Use Lex Import Function to Create a Lex Bot without Manually Creating Intents](doc/create-intent-using-lex-import.md)
-3.	[Create Lex Lambda Function](doc/create-lex-lambda-function.md)
-4.	[Link Lex bot with the Lex Lambda function](doc/create-lex-bot-with-lambda.md)
-5.	[Chat with Lex Bot & Publish it](doc/chat-with-lex-bot-and-publish.md)
-6.	(optional) [Bring Lex Bot to Web](doc/bring-lex-to-web.md)
-7.	[Export the Bot to Alexa Skills Kit](doc/export-bot-to-alexa-skill.md)
-8.	[Create a Lambda function for Alexa](doc/create-lambda-for-alexa.md)
-9.	[Add Account Linking For Alexa](doc/account-linking-for-alexa.md)
-10. (optional) [Add SMS Notification to Lex](doc/add-sms-to-lex.md)
+1. [Create the Lex Bot Manually](doc/create-lex-bot-manually.md)
+1. [Use Lex Import Function to Create a Lex Bot without Manually Creating Intents](doc/create-intent-using-lex-import.md)
+1. [Create Lex Lambda Function](doc/create-lex-lambda-function.md)
+1. [Link Lex bot with the Lex Lambda function](doc/create-lex-bot-with-lambda.md)
+1. [Chat with Lex Bot & Publish it](doc/chat-with-lex-bot-and-publish.md)
+1. (optional) [Bring Lex Bot to Web](doc/bring-lex-to-web.md)
+1. [Export the Bot to Alexa Skills Kit](doc/export-bot-to-alexa-skill.md)
+1. [Create a Lambda function for Alexa](doc/create-lambda-for-alexa.md)
+1. (optional) [Add SMS Notification to Lex](doc/add-sms-to-lex.md)
 
 ##	Tips
 
