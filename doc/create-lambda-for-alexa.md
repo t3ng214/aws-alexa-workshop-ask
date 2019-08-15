@@ -13,7 +13,7 @@ Enter the full name into the search box if you need to narrow the search results
 1. Click on the application. This template will create the Lambda function, grant the Alexa Skills 
 Kit permission to invoke it, and set up an IAM role for you. It will also add the 
 code from this GitHub repo and include the required dependencies so that you don't 
-have to upload them yourself.
+have to upload them yourself
 
 1. Change the application name and then Click the **Deploy** button at the bottom of the page.
     ![](../img/workshop/10-7.png) 
@@ -33,17 +33,25 @@ the top right corner of the page. Copy the ARN value for this Lambda function fo
 the next section of the guide
 
 1. Go back to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask). 
-You may still have a browser tab open if you follow this tutorial
+You may still have a browser tab open if you follow this tutorial. Select the skill
+you created
 
-1. Select the Endpoint tab on the left side navigation panel.
+1. Select the **Endpoint** tab on the left side navigation panel
 
-1. Select the "AWS Lambda ARN" option for your endpoint. You have the ability to host your code anywhere that you would like, but for the purposes of simplicity and frugality, we are using AWS Lambda.
-1. Paste your Lambda's ARN (Amazon Resource Name) into the textbox provided for Default Region.
-    ![](../img/workshop/alexa-configure-lambda.png) 
-1. Click the Save Endpoints button at the top of the main panel.
-1. Click on Test.
-2. Make sure test is enabled.
+1. Select the **AWS Lambda ARN** option for your endpoint. You have the ability to host your 
+code anywhere that you would like, but for the purposes of simplicity and frugality, we are 
+using AWS Lambda
+
+1. Paste your **Lambda's ARN (Amazon Resource Name)** into the textbox provided for Default Region.
+    ![](../img/workshop/alexa-configure-lambda.png)
+
+1. Click the **Save Endpoints** button at the top of the main panel
+
+1. Click on **Test**
+
+1. Make sure test is enabled.
     ![](../img/workshop/test-alexa.png)
 
-21.	**Type Open Personal Banker(your invocation name) to start the conversation** .
-![](../img/workshop/start-alexa.png)
+1. Type `Open Personal Banker` (your invocation name) to start the conversation
+    ![](../img/workshop/start-alexa.png)
+
